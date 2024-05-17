@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Connexion</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+    <!-- Custom CSS -->
+
+  <link rel="stylesheet" href="assets/css/securite.css"  />
+
+</head>
+<body>
+    <div id="login">
+        {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+        {% if app.user %}
+            <div class="mb-3">
+                Votre email est : {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Accueil</a>
+            </div>
+        {% else %}
+            <div id="login-box">
+                <form id="login-form" class="form" action="{{ path('app_login') }}" method="post">
+                    <h3 class="text-info">Connexion</h3>
+                    <div class="form-group">
+                        <label for="inputEmail" class="text-info">Email:</label>
+                        <input type="email" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword" class="text-info">Mot de passe:</label>
+                        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+                    </div>
+                    <div id="register-link" class="text-right">
+                        <a href="{{ path('app_forgot_password_request') }}" class="text-info">Mot de passe oublié ?</a>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                        <label for="remember-me" class="text-info"><span>Se souvenir de moi</span> <span><input id="remember-me" name="_remember_me" type="checkbox"></span></label><br>
+                        <input type="submit" name="submit" class="btn btn-info btn-md" value="Connexion">
+                    </div>
+                    <div id="register-link" class="text-right">
+                        <a href="{{ path('app_register') }}" class="text-info" style="visibility: hidden;">S'inscrire</a>
+
+                    </div>
+                </form>
+            </div>
+        {% endif %}
+    </div>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

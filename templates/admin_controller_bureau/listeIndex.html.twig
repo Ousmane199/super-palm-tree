@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index des bureaux</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            margin-top: 50px;
+        }
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            text-align: left;
+            vertical-align: middle;
+        }
+        th {
+            background-color: #f8f9fa;
+            border-top: 1px solid #dee2e6;
+            border-bottom: 1px solid #dee2e6;
+            padding: 10px;
+        }
+        td {
+            border-bottom: 1px solid #dee2e6;
+            padding: 10px;
+        }
+        a {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Liste des bureaux</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Capacité</th>
+                <th>Numéro</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for bureau in bureaus %}
+            <tr>
+                <td>{{ bureau.id }}</td>
+                <td>{{ bureau.nombPlace }}</td>
+                <td>{{ bureau.nBureau }}</td>
+                
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="4">Aucun bureau trouvé</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/menu" class="btn btn-secondary">Administration</a>
+
+
+    {# <a href="{{ path('app_admin_controller_bureau_new') }}" class="btn btn-success">Créer un nouveau bureau</a> #}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

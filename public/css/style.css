@@ -1,0 +1,14 @@
+body
+{
+    text-align: center;
+}
+a
+{
+    text-decoration: none;
+}
+
+ul
+{
+    list-style: inline;
+    font-size: 20px;
+}

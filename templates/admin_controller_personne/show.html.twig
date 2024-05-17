@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personne</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        /* Styles personnalisés pour la page */
+        .table-bordered th,
+        .table-bordered td {
+            border: 1px solid #dee2e6;
+        }
+        .table-bordered th {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Personne</h1>
+
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ personne.id }}</td>
+                </tr>
+                <tr>
+                    <th>Nom</th>
+                    <td>{{ personne.nom }}</td>
+                </tr>
+                <tr>
+                    <th>Prénom</th>
+                    <td>{{ personne.prenom }}</td>
+                </tr>
+                <tr>
+                    <th>Numéro de téléphone</th>
+                    <td>{{ personne.numeroTel }}</td>
+                </tr>
+                <tr>
+                    <th>Date d'arrivée</th>
+                    <td>{{ personne.dateArrive ? personne.dateArrive|date('Y-m-d') : '' }}</td>
+                </tr>
+                <tr>
+                    <th>Date de départ</th>
+                    <td>{{ personne.dateDepart ? personne.dateDepart|date('Y-m-d') : '' }}</td>
+                </tr>
+                <tr>
+                    <th>Statut</th>
+                    <td>{{ personne.statut }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="{{ path('app_admin_controller_personne_index') }}" class="btn btn-secondary mr-2">Retour à la liste</a>
+        <a href="{{ path('app_admin_controller_personne_edit', {'id': personne.id}) }}" class="btn btn-primary">Modifier</a>
+        <a href="/menu" class="btn btn-secondary">Administration</a>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+{# {% extends 'base.html.twig' %} #}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Modifier Bureau{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        /* Styles personnalisés pour le formulaire */
+        .form-group label {
+            font-weight: bold;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="password"],
+        .form-group select {
+            border-radius: 0;
+        }
+        .btn-primary {
+            background-color: #337ab7;
+            border-color: #2e6da4;
+        }
+        .btn-primary:hover {
+            background-color: #286090;
+            border-color: #204d74;
+        }
+        .btn-danger {
+            background-color: #d9534f;
+            border-color: #d43f3a;
+        }
+        .btn-danger:hover {
+            background-color: #c9302c;
+            border-color: #ac2925;
+        }
+        .btn-secondary {
+            color: #fff;
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+        .btn-secondary:hover {
+            color: #fff;
+            background-color: #5a6268;
+            border-color: #545b62;
+        }
+    </style>
+</head>
+<body>
+    {% block body %}
+        <div class="container">
+            <h1>Modifier Bureau</h1>
+
+            {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+                {% for field in form %}
+                    <div class="form-group">
+                        <label for="{{ field.vars.id }}" class="col-sm-2 control-label">{{ field.vars.label }}</label>
+                        <div class="col-sm-10">
+                            {{ form_widget(field, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="form-group d-flex justify-content-end">
+                    <div class="mr-auto">
+                        <a href="{{ path('app_admin_controller_bureau_index') }}" class="btn btn-secondary mr-2">Retour à la liste</a>
+                        
+                    <button type="submit" class="btn btn-primary">{{ button_label|default('Mettre à jour') }}</button>
+                    <button type="submit" class="btn btn-danger ml-2" formaction="{{ path('app_admin_controller_bureau_delete', {'id': bureau.id}) }}">Supprimer</button>
+                <a href="/menu" class="btn btn-secondary">Administration</a>
+
+                </div>
+            {{ form_end(form) }}
+        </div>
+    {% endblock %}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

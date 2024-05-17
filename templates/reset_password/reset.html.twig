@@ -1,0 +1,85 @@
+{# {% extends 'base.html.twig' %} #}
+
+{% block stylesheets %}
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        #reset-password-box {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 330px;
+            margin: auto;
+            margin-top: 100px;
+        }
+
+        #reset-password-form {
+            text-align: center;
+        }
+
+        #reset-password-form h1 {
+            margin-bottom: 30px;
+        }
+
+        #reset-password-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        #reset-password-form label {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        #reset-password-form input[type="password"] {
+            border-radius: 25px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            height: 40px;
+            padding: 0 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        #reset-password-form button[type="submit"] {
+            background-color: #007bff;
+            border: none;
+            border-radius: 25px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 14px;
+            height: 40px;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        #reset-password-form button[type="submit"]:hover {
+            background-color: #0062cc;
+        }
+    </style>
+{% endblock %}
+
+{% block title %}Réinitialisation du mot de passe{% endblock %}
+
+{% block body %}
+    <div id="reset-password-box">
+        <form id="reset-password-form" method="post">
+            <h1>Réinitialisation du mot de passe</h1>
+            {{ form_widget(resetForm.plainPassword, {'attr': {'class': 'form-control', 'autocomplete': 'new-password'}}) }}
+            <button type="submit" class="btn btn-primary">Réinitialiser le mot de passe</button>
+        </form>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+{% endblock %}

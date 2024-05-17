@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Créer un nouveau bureau</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            margin-top: 50px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #0069d9;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+        }
+        button:hover {
+            background-color: #ced4da;
+        }
+        .btn
+        {
+            background-color: #0069d9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Ajouter un nouveau bureau</h1>
+
+    {{ include('admin_controller_bureau/_form.html.twig') }}
+
+    <a href="{{ path('app_admin_controller_bureau_index') }}" class="btn btn-secondary">Retour à la liste</a>
+    <a href="/menu" class="btn btn-secondary">Administration</a>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

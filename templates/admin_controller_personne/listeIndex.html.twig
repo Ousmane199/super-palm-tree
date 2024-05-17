@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index des personnes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            margin-top: 50px;
+        }
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            text-align: left;
+            vertical-align: middle;
+        }
+        th {
+            background-color: #f8f9fa;
+            border-top: 1px solid #dee2e6;
+            border-bottom: 1px solid #dee2e6;
+            padding: 10px;
+        }
+        td {
+            border-bottom: 1px solid #dee2e6;
+            padding: 10px;
+        }
+        a {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Liste des personnes triées par prénoms</h1>
+
+    <table class="table">
+    <thead>
+        <tr>
+            <th>Index</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Numéro de téléphone</th>
+            <th>Date d'arrivée</th>
+            <th>Date de départ</th>
+            <th>Statut</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for personne in personnes|sort((a, b) => a.prenom <=> b.prenom) %} {# Trie les personnes par prénom #}
+            <tr>
+                <td>{{ loop.index }}</td> {# Affiche l'index de la boucle au lieu d'utiliser une variable i #}
+                <td>{{ personne.nom }}</td>
+                <td>{{ personne.prenom }}</td>
+                <td>{{ personne.numeroTel }}</td>
+                <td>{{ personne.dateArrive ? personne.dateArrive|date('Y-m-d') : '' }}</td>
+                <td>{{ personne.dateDepart ? personne.dateDepart|date('Y-m-d') : '' }}</td>
+                <td>
+                    {% if personne.statut == 'titulaire' %}
+                        Titulaire
+                    {% elseif personne.statut == 'ATER' %}
+                        ATER
+                    {% elseif personne.statut == 'Doctorant' %}
+                        Doctorant
+                    {% elseif personne.statut == 'Post-doctorant' %}
+                        Post-doctorant
+                    {% elseif personne.statut == 'Ingénieur' %}
+                        Ingénieur
+                    {% elseif personne.statut == 'Secrétaire' %}
+                        Secrétaire
+                    {% endif %}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">Aucun enregistrement trouvé</td> {# Utilise colspan="7" au lieu de colspan="8" car il y a 7 colonnes dans le tableau #}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+    <button><a href="/pdf/generate">Télécharger la liste de personnes</a></button>
+    <button><a href="/pdf/generateGroupe">Télécharger la liste de personnes par groupe</a></button>
+    <button><a href="/menu">Administration</a></button>
+    {# <a href="{{ path('app_admin_controller_personne_new') }}" class="btn btn-success">Créer un nouveau</a> #}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+

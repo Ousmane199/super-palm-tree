@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajouter une nouvelle personne</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            margin-top: 50px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #0069d9;
+        }
+        .field-name {
+            font-weight: bold;
+            padding:15px
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Ajouter une nouvelle personne</h1>
+
+    {{ form_start(form) }}
+        {% for field in form %}
+            {% if field.vars.name != 'id' and field.vars.name != '_token' %}
+                <span class="field-name">{{ field.vars.name }}</span>
+
+                     
+                <div class="form-group">
+                    <div class="col-sm-10">
+                        {{ form_widget(field, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+        <a href="{{ path('app_admin_controller_personne_index') }}" class="btn btn-secondary">Retour à la liste</a>
+        <a href="/menu" class="btn btn-secondary">Administration</a>
+    {{ form_end(form) }}
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
