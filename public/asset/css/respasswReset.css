@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+#reset-password-box {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 330px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+#reset-password-form {
+    text-align: center;
+}
+
+#reset-password-form h1 {
+    margin-bottom: 30px;
+}
+
+#reset-password-form .form-group {
+    margin-bottom: 20px;
+}
+
+#reset-password-form label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#reset-password-form input[type="password"] {
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    height: 40px;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#reset-password-form button[type="submit"] {
+    background-color: #007bff;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    height: 40px;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+#reset-password-form button[type="submit"]:hover {
+    background-color: #0062cc;
+}

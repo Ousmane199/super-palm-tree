@@ -1,0 +1,40 @@
+/* Styles personnalisés pour le formulaire */
+.form-group label {
+    font-weight: bold;
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group select {
+    border-radius: 0;
+}
+.btn-primary {
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+.btn-primary:hover {
+    background-color: #286090;
+    border-color: #204d74;
+}
+.btn-danger {
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+.btn-danger:hover {
+    background-color: #c9302c;
+    border-color: #ac2925;
+}
+.btn-secondary {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+.btn-secondary:hover {
+    color: #fff;
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+.field-name {
+    font-weight: bold;
+    padding:15px
+}

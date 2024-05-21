@@ -1,0 +1,99 @@
+body {
+    text-align: center;
+    background-color: honeydew;
+    font-size: 16px;
+    margin-top: -47px;
+  }
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: block; /* Change inline-block à block */
+    margin: 10px 0; /* Ajoute une marge de 10px en haut et en bas de chaque élément */
+  }
+  .container
+  {
+    box-shadow: 0px 10px 10px rgba(1.5, 1.9, 1.0, 0.1);
+
+    margin: 0 auto;
+    padding: 4px;
+
+  }
+  /* {# css partie image #} */
+
+  .centered-text {
+    text-align: center;
+    vertical-align: middle;
+  }
+
+
+
+  .bureau-info {
+    position: absolute;
+    top: 33%;
+    background-color: honeydew;
+    right: 1%; /* Change this to position the element within the visible area */
+    width: 20%;
+  }
+  .floors-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  /* {# La grande image #} */
+  .gauche {
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  /* {# Les deux images en bas #} */
+  .fixeimg2 {
+    width: 90%;
+    height: auto;
+  }
+
+  /* {# Les deux images mettre de l'espace ou les manipuler#} */
+  .floors-container > div {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-right: 1%;
+
+  }
+  /*  
+  {# manipules la boite de l'image en generale #}
+  */
+  .containerImage
+  {
+    width: 75%;
+    left:-20%;
+    padding-left:25%;
+  }
+  #etage11
+  {
+    box-shadow: 40px 50px 100px rgba(1.5, 1.9, 1.0, 0.1);
+    width: 100%;
+    height: auto;
+  }
+  #etage22
+  {
+    box-shadow: 40px 50px 100px rgba(1.5, 1.9, 1.0, 0.1);
+    width: 100%;
+    height: auto;
+  }
+/* {# centre le texte connexion contenu dans le nav #} */
+#navLienConnexion
+  {
+    color:green;
+    width:150%;
+    margin-top: 25%;
+  }

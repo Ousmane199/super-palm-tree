@@ -1,0 +1,24 @@
+body {
+    margin-top: 50px;
+}
+table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+th, td {
+    text-align: left;
+    vertical-align: middle;
+}
+th {
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+    padding: 10px;
+}
+td {
+    border-bottom: 1px solid #dee2e6;
+    padding: 10px;
+}
+a {
+    margin-right: 10px;
+}
