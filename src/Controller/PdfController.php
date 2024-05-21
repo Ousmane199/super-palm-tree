@@ -102,7 +102,7 @@ use TCPDF;
 
         //$pdf->SetFont('helvetica', 'B', 12); // 'B' pour indiquer la police en gras
         // Ajout des en-têtes de colonne
-        $pdf->Cell(13, 10, 'Index', 1, 0);
+        $pdf->Cell(19, 10, 'Index', 1, 0);
         $pdf->Cell(30, 10, 'Nom', 1, 0);
         $pdf->Cell(50, 10, 'Prénom', 1, 0);
         $pdf->Cell(40, 10, 'Téléphone', 1, 0);
@@ -130,7 +130,7 @@ use TCPDF;
             // Pour chaque personne du bureau
             foreach ($personnes as $personne) {
                 // Ajout des données de la personne
-                $pdf->Cell(13, 10, $numero, 1, 0);
+                $pdf->Cell(19, 10, $numero, 1, 0);
                 $pdf->Cell(30, 10, $personne->getNom(), 1, 0);
                 $pdf->Cell(50, 10, $personne->getPrenom(), 1, 0);
                 $pdf->Cell(40, 10, $personne->getNumeroTel(), 1, 0);
