@@ -111,7 +111,7 @@ const bureauInfo = document.getElementById('bureauInfo');
                                     </dl>
                                 </div>
                             </li>
-                             <br>
+                             
                         `).join('')}
                     </ol>
                 `;
